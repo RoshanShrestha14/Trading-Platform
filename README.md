@@ -16,7 +16,6 @@ A modern, full-stack paper trading platform built with the MERN stack that simul
 - **RESTful API** - Clean and structured endpoints
 - **JWT Authentication** - Secure user sessions
 - **MongoDB Integration** - Efficient data storage
-- **Real-time Data** - WebSocket support for live updates
 - **Error Handling** - Comprehensive error management
 
 ## 🛠️ Tech Stack
