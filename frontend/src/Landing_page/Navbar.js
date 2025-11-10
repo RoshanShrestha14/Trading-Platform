@@ -66,7 +66,7 @@ const Navbar = () => {
                   padding: "8px 20px",
                   borderRadius: "6px",
                   background: "transparent",
-                  color: "white",
+                  color: "rgba(59, 130, 246, 0.5)",
                   cursor: "pointer",
                    border: "1px solid rgba(59, 130, 246, 0.5)",
           transition: "all 0.3s ease"
