@@ -42,7 +42,7 @@ const Login = () => {
         setTimeout(() => {
           window.location.href =
         process.env.NODE_ENV === "production"
-          ? "https://tradestack-dashboard.vercel.app"
+          ? process.env.REACT_APP_DASHBOARD_URL
           : "http://localhost:3001";
         });
       } else {
