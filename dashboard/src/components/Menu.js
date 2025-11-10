@@ -11,11 +11,6 @@ const Menu = ({ user, logout }) => {
     console.log(index);
   }
 
-  function handleDropDown(index) {
-    setDropDown(!dropDown);
-    console.log(dropDown);
-  }
-
   return (
     <div className="menu-container">
       <div>

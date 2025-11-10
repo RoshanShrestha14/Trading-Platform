@@ -9,7 +9,7 @@ const TopBar = ({ user, logout }) => {
         <div className="nifty">
           <img
             src="Nav.png"
-            alt="Nav image"
+            alt="Nav"
             style={{
               width: "7rem",
               height: "auto",

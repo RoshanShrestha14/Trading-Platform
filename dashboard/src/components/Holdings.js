@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import axios from "axios";
 import {VerticalGraph} from './VerticalGraph'
  import { RefreshContext } from "./RefreshContext";
 
