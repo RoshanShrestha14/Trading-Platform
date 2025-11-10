@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../api";
 
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
@@ -7,7 +7,7 @@ const Positions = () => {
   useEffect(() => {
     const fetchPosition = async () => {
       try {
-        const res = await axios.get("http://localhost:3002/Positions");
+        const res = await API.get("/Positions");
         setAllPositions(res.data);
       } catch (err) {
         console.log("fetching error:", err);

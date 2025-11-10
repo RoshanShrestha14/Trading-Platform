@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../api";
 
 function PopupSell({ onClose, uid, perPrice }) {
   const [qty, setQty] = useState(1);
   const [price, setPrice] = useState(perPrice);
 
   const handleBuy = async () => {
-    await axios.post("http://localhost:3002/Orders", {
+    await API.post("/Orders", {
       name: uid,
       qty: qty,
       price: price,

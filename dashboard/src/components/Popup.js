@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import { RefreshContext } from "./RefreshContext";
+import API from "../api";
 
 function Popup({ onClose, uid, perPrice, percent }) {
   const [qty, setQty] = useState(1);
@@ -9,7 +9,7 @@ function Popup({ onClose, uid, perPrice, percent }) {
   const { fetchHoldings } = useContext(RefreshContext);
 
   const handleBuy = async () => {
-    await axios.post("http://localhost:3002/Orders", {
+    await API.post("/Orders", {
       name: uid,
       qty: qty,
       price: price,
@@ -24,7 +24,7 @@ function Popup({ onClose, uid, perPrice, percent }) {
     let net = `${result >= 0 ? "+" : ""}${result}%`;
     let day = percent;
 
-    await axios.post("http://localhost:3002/Holdings/new", {
+    await API.post("/Holdings/new", {
       name: uid,
       qty: qty,
       avg: price,

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
+import API from "../api";
 
 // 1️⃣ Create the Context
 export const RefreshContext = createContext();
@@ -11,7 +11,7 @@ export const RefreshProvider = ({ children }) => {
   // 3️⃣ Define the function to fetch data
   const fetchHoldings = async () => {
     try {
-      const res = await axios.get("http://localhost:3002/Holdings");
+      const res = await API.get("/Holdings");
       setAllHoldings(res.data);
     } catch (err) {
       console.error("Error fetching holdings:", err);

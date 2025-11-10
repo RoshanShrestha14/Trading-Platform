@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
+import API from "../api";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,11 +16,15 @@ const Home = () => {
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
-        window.location.href = "http://localhost:3000/loginPage";
+        const frontendUrl =
+          process.env.NODE_ENV === "production"
+            ? process.env.REACT_APP_FRONTEND_URL
+            : "http://localhost:3000";
+        window.location.href = `${frontendUrl}/loginPage`;
       }
-      const { data } = await axios.get(
-        "http://localhost:3002/verifyUser",
-       
+      const { data } = await API.get(
+        "/verifyUser",
+
         { withCredentials: true }
       );
       console.log(data);
@@ -27,8 +32,12 @@ const Home = () => {
       setUsername(user);
       if (!status) {
         removeCookie("token");
-        window.location.href = "http://localhost:3000/loginPage";
-      } 
+        const frontendUrl =
+          process.env.NODE_ENV === "production"
+            ? process.env.REACT_APP_FRONTEND_URL
+            : "http://localhost:3000";
+        window.location.href = `${frontendUrl}/loginPage`;
+      }
     };
 
     verifyCookie(); // ✅ Add this missing call
@@ -36,13 +45,16 @@ const Home = () => {
 
   const Logout = () => {
     removeCookie("token");
-    window.location.href = "http://localhost:3000/loginPage";
+  const frontendUrl =
+          process.env.NODE_ENV === "production"
+            ? process.env.REACT_APP_FRONTEND_URL
+            : "http://localhost:3000";
+        window.location.href = `${frontendUrl}/loginPage`;
   };
 
   return (
     <>
-     
-      <TopBar user={username} logout= {Logout} />   
+      <TopBar user={username} logout={Logout} />
       <RefreshProvider>
         <Dashboard />
       </RefreshProvider>
