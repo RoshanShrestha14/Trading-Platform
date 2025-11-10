@@ -67,7 +67,6 @@ const Navbar = () => {
                   borderRadius: "6px",
                   background: "transparent",
                   color: "white",
-                  border: "1px solid rgba(59, 130, 246, 0.5)",
                   cursor: "pointer",
                    border: "1px solid rgba(59, 130, 246, 0.5)",
           transition: "all 0.3s ease"
@@ -89,7 +88,6 @@ const Navbar = () => {
         style={{
           padding: "8px 20px",
           borderRadius: "6px",
-          background: "rgba(59, 130, 246, 0.8)",
           color: "white",
           border: "none",
           cursor: "pointer",

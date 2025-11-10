@@ -39,7 +39,6 @@ function Hero() {
               borderRadius: "6px",
               background: "rgba(92, 149, 240, 0.43)",
               color: "white",
-              border: "none",
               cursor: "pointer",
               border: "1px solid rgba(59, 130, 246, 0.5)",
               transition: "all 0.3s ease",
