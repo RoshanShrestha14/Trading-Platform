@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./Login.module.css";
-import axios from "axios";
+import API from "../api";
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -22,10 +22,10 @@ const Login = () => {
   //handling error
   const handleError = (err) => {
     setError(err);
-     setFormData({
-        email: "",
-        password: "",
-      });
+    setFormData({
+      email: "",
+      password: "",
+    });
   };
 
   //handling success
@@ -35,16 +35,15 @@ const Login = () => {
 
     // API call
     try {
-      const { data } = await axios.post(
-        "http://localhost:3002/login",
-        formData,
-        { withCredentials: true }
-      );
+      const { data } = await API.post("/login", formData);
 
       const { success, message } = data;
       if (success) {
         setTimeout(() => {
-          window.location.href = "http://localhost:3001";
+          window.location.href =
+        process.env.NODE_ENV === "production"
+          ? "https://tradestack-dashboard.vercel.app"
+          : "http://localhost:3001";
         });
       } else {
         handleError(message);

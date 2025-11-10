@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./Login.module.css"; // ✅ Correct for CSS Modules
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import API from "../api";
+
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -31,8 +31,8 @@ const Login = () => {
 
     // API call
     try {
-      const { data } = await axios.post(
-        "http://localhost:3002/signup",
+      const { data } = await API.post(
+        "/signup",
         formData, // ✅ You can just pass formData directly
         { withCredentials: true }
       );
@@ -40,7 +40,10 @@ const Login = () => {
       const { success, message } = data;
       if (success) {
         setTimeout(() => {
-          window.location.href = "http://localhost:3001";
+          window.location.href =
+        process.env.NODE_ENV === "production"
+          ? "https://tradestack-dashboard.vercel.app"
+          : "http://localhost:3001";
         });
       } else {
         handleError(message);
@@ -132,7 +135,7 @@ const Login = () => {
         <div className={styles["signup-link"]}>
           Don't have an account? <Link to="/signupPage">Sign up now</Link>
         </div>
-        <ToastContainer />
+        
       </div>
     </div>
   );

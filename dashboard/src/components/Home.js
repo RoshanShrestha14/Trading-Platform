@@ -42,8 +42,7 @@ const Home = () => {
   return (
     <>
      
-      <TopBar user={username} logout= {Logout} />
-    
+      <TopBar user={username} logout= {Logout} />   
       <RefreshProvider>
         <Dashboard />
       </RefreshProvider>
