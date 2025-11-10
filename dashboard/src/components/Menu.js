@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Menu = ({ user, logout }) => {
   const [selectedMenu, setSelectedMenu] = useState(0);
-  const [dropDown, setDropDown] = useState(false);
 
   function handleSelectedMenu(index) {
     setSelectedMenu(index);
