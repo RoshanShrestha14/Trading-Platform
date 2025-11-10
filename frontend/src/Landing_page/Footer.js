@@ -23,25 +23,25 @@ function Footer() {
                             <div className="col-4">
                                 <h6 className="fw-bold mb-3">Product</h6>
                                 <div className="d-flex flex-column">
-                                    <a href="#" className="footer-link mb-2">Features</a>
-                                    <a href="#" className="footer-link mb-2">Pricing</a>
-                                    <a href="#" className="footer-link">API</a>
+                                    <a className="footer-link mb-2">Features</a>
+                                    <a  className="footer-link mb-2">Pricing</a>
+                                    <a className="footer-link">API</a>
                                 </div>
                             </div>
                             <div className="col-4">
                                 <h6 className="fw-bold mb-3">Support</h6>
                                 <div className="d-flex flex-column">
-                                    <a href="#" className="footer-link mb-2">Help Center</a>
-                                    <a href="#" className="footer-link mb-2">Contact</a>
-                                    <a href="#" className="footer-link">Status</a>
+                                    <a  className="footer-link mb-2">Help Center</a>
+                                    <a className="footer-link mb-2">Contact</a>
+                                    <a className="footer-link">Status</a>
                                 </div>
                             </div>
                             <div className="col-4">
                                 <h6 className="fw-bold mb-3">Company</h6>
                                 <div className="d-flex flex-column">
-                                    <a href="#" className="footer-link mb-2">About</a>
-                                    <a href="#" className="footer-link mb-2">Careers</a>
-                                    <a href="#" className="footer-link">Blog</a>
+                                    <a className="footer-link mb-2">About</a>
+                                    <a className="footer-link mb-2">Careers</a>
+                                    <a className="footer-link">Blog</a>
                                 </div>
                             </div>
                         </div>
@@ -51,9 +51,9 @@ function Footer() {
                     <div className="col-lg-3 col-md-4 mb-4 text-center text-md-start">
                         <h6 className="fw-bold mb-3">Follow Us</h6>
                         <div className="d-flex gap-3 justify-content-center justify-content-md-start">
-                            <a href="#" className="social-icon">📘</a>
-                            <a href="#" className="social-icon">🐦</a>
-                            <a href="#" className="social-icon">📷</a>
+                            <a className="social-icon">📘</a>
+                            <a  className="social-icon">🐦</a>
+                            <a  className="social-icon">📷</a>
                         </div>
                     </div>
                 </div>
