@@ -14,7 +14,6 @@ const OrdersRoute = require("./Routes/OrdersRoute");
 const app = express();
 const port = process.env.PORT || 3002;
 
-
 async function connectDB() {
   try {
     await mongoose.connect(process.env.MONGO_URL, {
@@ -24,46 +23,42 @@ async function connectDB() {
     console.log("✅ Connected to MongoDB Database");
   } catch (err) {
     console.error("❌ MongoDB Connection Error:", err.message);
-    process.exit(1); 
+    process.exit(1);
   }
 }
 
 connectDB();
 
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
 const allowedOrigins = [
-  "http://localhost:3000",    
-  "http://localhost:3001",    
-  process.env.CLIENT_URL,     
-  process.env.DASHBOARD_URL,  
+  "http://localhost:3000",
+  "http://localhost:3001",
+  process.env.CLIENT_URL,
+  process.env.DASHBOARD_URL,
 ];
-app.use(cors({
-  origin: function (origin, callback) {
-  
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error("Not allowed by CORS"));
-  },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-}));
-
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("🚀 TradeStack Backend is Running!");
 });
 
 app.use("/", authRoute);
-app.use("/holdings", HoldingsRoute);
-app.use("/positions", PositionRoute);
-app.use("/orders", OrdersRoute);
-
-
+app.use("/Holdings", HoldingsRoute);
+app.use("/Positions", PositionRoute);
+app.use("/Orders", OrdersRoute);
 
 app.listen(port, "0.0.0.0", () => {
   console.log(`✅ Backend listening on port ${port}`);
