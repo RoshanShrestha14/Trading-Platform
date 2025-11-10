@@ -1,0 +1,36 @@
+.simple-footer {
+  background: #0D1216;
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.footer-link {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #3B82F6;
+}
+
+.social-icon {
+  color: #CBD5E1;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  color: #3B82F6;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .simple-footer .row > div {
+    text-align: center;
+  }
+  
+  .simple-footer img {
+    margin-left: 0 !important;
+    width: 50% !important;
+  }
+}

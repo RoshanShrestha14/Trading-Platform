@@ -1,0 +1,20 @@
+.aboutH1{
+    margin-top: 6rem;
+     color: antiquewhite;
+     opacity: 0.8;
+}
+@media (max-width: 700px) {
+    h1{
+         font-size: 1.3rem;
+         font-weight: bold;
+    }
+
+    
+    h6{
+         font-size: 0.8rem;
+    }
+
+  
+  
+}
+    

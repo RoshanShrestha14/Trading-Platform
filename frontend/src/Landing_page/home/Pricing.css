@@ -1,0 +1,34 @@
+.pricingH2{ 
+    color:aqua;
+    margin-top: 2rem;
+     text-shadow: 
+        0 0 10px #3bf6a83b,
+        0 0 20px #3bf6a849,
+        0 0 30px #3bf6a854;
+}
+
+
+     
+@media (max-width: 700px) {
+    h1{
+         font-size: 1.5rem;
+         font-weight: bold;
+    }
+ h5{
+         font-size: 0.9rem;
+         
+    }
+    h2{
+         font-size: 1rem;
+    }
+    p{
+         font-size: 0.8rem;
+    }
+
+  
+  
+}
+    
+
+   
+
